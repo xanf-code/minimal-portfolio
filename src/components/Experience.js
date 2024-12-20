@@ -3,7 +3,7 @@ import Image from "next/image";
 import { CalendarDays } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useQuery } from "@tanstack/react-query";
-import fetchResume from "@/api/fetchResume";
+import fetchResume from "@/network/fetchResume";
 
 export const Experience = () => {
   const { data, isLoading, isError } = useQuery({

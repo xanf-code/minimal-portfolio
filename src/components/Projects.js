@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useQuery } from "@tanstack/react-query";
-import fetchResume from "@/api/fetchResume";
+import fetchResume from "@/network/fetchResume";
 
 export const Projects = () => {
   const { data, isLoading, isError } = useQuery({
