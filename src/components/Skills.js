@@ -3,7 +3,7 @@
 import { Card, CardTitle, CardHeader, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useQuery } from "@tanstack/react-query";
-import fetchResume from "@/network/fetchResume";
+import { fetchResume } from "../../actions";
 
 export const Skills = () => {
   const { data, isLoading, isError } = useQuery({

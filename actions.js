@@ -1,4 +1,6 @@
-export default async function fetchResume(collection) {
+"use server";
+
+export const fetchResume = async (collection) => {
   try {
     const response = await fetch(
       process.env.POCKET_BASE_URL + `/api/collections/${collection}/records`
@@ -11,4 +13,4 @@ export default async function fetchResume(collection) {
   } catch (error) {
     console.error("There was a problem with the fetch operation:", error);
   }
-}
+};
