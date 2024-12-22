@@ -15,14 +15,14 @@ export const Experience = () => {
   if (isError) return <div>Sorry There was an Error</div>;
   return (
     <>
-      <h2 className="text-xl font-bold mb-4">Work Experience</h2>
-      <Card>
-        <CardContent className="pt-6">
+      <h2 className="text-xl font-bold py-4">🏢 Work Experience</h2>
+      <Card className="shadow-none border-none">
+        <CardContent className="pt-4 pl-0">
           <ul className="space-y-8">
             {data.items.map((j) => (
               <li
                 key={j.id}
-                className="border-b last:border-b-0 pb-8 last:pb-0"
+                className="border-b last:border-b-0 pb-8 last:pb-0 border-gray-800"
               >
                 <div className="flex items-center space-x-4">
                   <Image
@@ -33,7 +33,7 @@ export const Experience = () => {
                     alt={j.company}
                     width={40}
                     height={40}
-                    className="rounded-md border object-cover shadow-none"
+                    className="rounded-md border-0 object-cover shadow-none bg-white"
                   />
                   <div>
                     <h3 className="font-semibold">{j.role}</h3>
@@ -44,7 +44,7 @@ export const Experience = () => {
                   <CalendarDays className="size-3 mr-2" />
                   {j.duration}
                 </p>
-                <p className="text-sm mt-2">{j.description}</p>
+                <p className="text-sm mt-2 text-gray-300">{j.description}</p>
               </li>
             ))}
           </ul>

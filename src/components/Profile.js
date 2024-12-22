@@ -26,7 +26,7 @@ const socials = [
 
 export const Profile = () => {
   return (
-    <Card className="shadow-none">
+    <Card className="shadow-none border-none">
       <CardContent className="pt-6">
         <div className="flex flex-col items-start gap-2 ">
           <div className="flex flex-row md:flex-col items-center md:items-start w-full gap-4">
@@ -54,7 +54,7 @@ export const Profile = () => {
           </p>
           <Button className="mt-4 w-full" asChild>
             <Link target="_blank" href="/resume.pdf" className="font-semibold">
-              CONTACT ME
+              MY RESUME
             </Link>
           </Button>
           <div className="mt-4 flex flex-col space-y-2 border-t border-border pt-4 w-full">

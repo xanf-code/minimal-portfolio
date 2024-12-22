@@ -15,7 +15,7 @@ export const Skills = () => {
   if (isError) return <div>Sorry There was an Error</div>;
 
   return (
-    <Card className="mt-6 shadow-none">
+    <Card className="shadow-none border-none">
       <CardHeader>
         <CardTitle>Skills</CardTitle>
       </CardHeader>
