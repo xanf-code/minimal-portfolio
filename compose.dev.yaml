@@ -1,0 +1,18 @@
+services:
+  minimal-portfolio:
+    container_name: minimal-portfolio
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+
+    volumes:
+      - ./src:/app/src
+      - ./public:/app/public
+    restart: always
+    ports:
+      - 3000:3000
+    # networks:
+    #   - my_network
+# networks:
+#   my_network:
+#     external: true

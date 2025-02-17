@@ -1,0 +1,14 @@
+services:
+  minimal-portfolio-prod:
+    container_name: minimal-portfolio-prod
+    build:
+      context: .
+      dockerfile: prod.Dockerfile
+    restart: always
+    ports:
+      - 3000:3000
+    # networks:
+    #   - my_network
+# networks:
+#   my_network:
+#     external: true
