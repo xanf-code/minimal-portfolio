@@ -2,6 +2,12 @@ version: 0.2
 phases:
   install:
     commands:
+      - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+      - export NVM_DIR="$HOME/.nvm"
+      - . "$NVM_DIR/nvm.sh"
+      - nvm install 20
+      - nvm use 20
+      - node -v
       - echo Installing dependencies…
       - npm install
   pre_build:
