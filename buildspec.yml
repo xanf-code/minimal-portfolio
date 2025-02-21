@@ -2,15 +2,16 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo Installing dependencies…
+      - echo "Installing dependencies…"
       - npm install
   pre_build:
     commands:
-      - echo Preparing for build…
+      - echo "Preparing for build…"
   build:
     commands:
-      - echo Building Next.js application…
-      - npm run build
+      - echo "Building Docker image of Next.js application…"
+      - docker compose -f compose.prod.yaml build
+      - echo "Build completed successfully!"
   post_build:
     commands:
-      - echo Build completed successfully!
+      - echo "Build completed successfully!""
