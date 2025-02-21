@@ -5,7 +5,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "minimal-portfolio-darshan.pockethost.io",
+        hostname: "i.ibb.co",
       },
     ],
   },

@@ -19,7 +19,7 @@ export const Projects = () => {
     <>
       <h2 className="text-xl font-bold mb-4">🗂️ Featured Projects</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-        {data.items.map((p, i) => (
+        {data.projects.map((p, i) => (
           <Card className="shadow-none" key={i}>
             <CardContent className="pt-6 h-full">
               <div className="flex flex-col h-full">

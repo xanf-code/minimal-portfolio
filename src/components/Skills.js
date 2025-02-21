@@ -21,8 +21,8 @@ export const Skills = () => {
       </CardHeader>
       <CardContent>
         <div className="flex flex-wrap gap-2">
-          {data.items.map((s) => (
-            <Badge key={s.id} variant="secondary">
+          {data.skills.map((s) => (
+            <Badge key={s._id} variant="secondary">
               {s.skill}
             </Badge>
           ))}

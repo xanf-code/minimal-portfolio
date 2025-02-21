@@ -19,17 +19,14 @@ export const Experience = () => {
       <Card className="shadow-none border-none">
         <CardContent className="pt-4 pl-0">
           <ul className="space-y-8">
-            {data.items.map((j) => (
+            {data.jobs.map((j) => (
               <li
-                key={j.id}
+                key={j._id}
                 className="border-b last:border-b-0 pb-8 last:pb-0 border-gray-800"
               >
                 <div className="flex items-center space-x-4">
                   <Image
-                    src={
-                      `https://minimal-portfolio-darshan.pockethost.io/api/files/pbc_1928539396/${j.id}/` +
-                      j.logo
-                    }
+                    src={j.logo}
                     alt={j.company}
                     width={40}
                     height={40}
