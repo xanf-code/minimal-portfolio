@@ -7,11 +7,13 @@ phases:
   pre_build:
     commands:
       - echo "Preparing for build…"
+      - echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
   build:
     commands:
       - echo "Building Docker image of Next.js application…"
       - docker compose -f compose.prod.yaml build
       - echo "Build completed successfully!"
+      - docker compose push
   post_build:
     commands:
       - echo "Build completed successfully!""
