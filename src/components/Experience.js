@@ -7,7 +7,7 @@ import { fetchResume } from "../actions";
 
 export const Experience = () => {
   const { data, isLoading, isError } = useQuery({
-    queryFn: async () => await fetchResume("experiences"),
+    queryFn: async () => await fetchResume("get-jobs"),
     queryKey: ["experiences"],
   });
 

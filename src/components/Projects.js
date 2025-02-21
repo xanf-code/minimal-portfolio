@@ -8,7 +8,7 @@ import { fetchResume } from "../actions";
 
 export const Projects = () => {
   const { data, isLoading, isError } = useQuery({
-    queryFn: async () => await fetchResume("projects"),
+    queryFn: async () => await fetchResume("get-projects"),
     queryKey: ["projects"],
   });
 

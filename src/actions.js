@@ -3,7 +3,7 @@
 export const fetchResume = async (collection) => {
   try {
     const response = await fetch(
-      `https://minimal-portfolio-darshan.pockethost.io/api/collections/${collection}/records`
+      `https://udjysea3jk.execute-api.us-east-1.amazonaws.com/prod/${collection}`
     );
     if (!response.ok) {
       throw new Error("Network response was not ok");
