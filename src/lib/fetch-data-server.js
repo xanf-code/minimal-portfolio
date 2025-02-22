@@ -9,13 +9,26 @@ const redis = new Redis({
 });
 
 export const fetchDataWithCache = async (key) => {
-  const cachedData = await redis.get(key);
+  let cachedData;
+
+  try {
+    cachedData = await redis.get(key);
+  } catch (getError) {
+    console.error("Redis GET error:", getError);
+    cachedData = null;
+  }
 
   if (cachedData) {
     return JSON.parse(cachedData);
-  } else {
-    const freshData = await fetchResume(key);
-    await redis.set(key, JSON.stringify(freshData), "EX", 60 * 5);
-    return freshData;
   }
+
+  const freshData = await fetchResume(key);
+
+  try {
+    await redis.set(key, JSON.stringify(freshData), "EX", 60 * 5);
+  } catch (setError) {
+    console.error("Redis SET error:", setError);
+  }
+
+  return freshData;
 };
