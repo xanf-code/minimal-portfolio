@@ -6,16 +6,20 @@ const redis = new Redis({
   host: process.env.REDIS_HOST,
   port: process.env.REDIS_PORT,
   password: process.env.REDIS_PASSWORD,
+  retryStrategy: () => 3000,
+});
+
+redis.on("error", (error) => {
+  console.error("Redis connection error:", error);
 });
 
 export const fetchDataWithCache = async (key) => {
-  let cachedData;
+  let cachedData = null;
 
   try {
     cachedData = await redis.get(key);
   } catch (getError) {
     console.error("Redis GET error:", getError);
-    cachedData = null;
   }
 
   if (cachedData) {
