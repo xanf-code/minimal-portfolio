@@ -12,4 +12,7 @@ phases:
       - docker-compose -f compose.prod.yaml build
   post_build:
     commands:
-      - echo "Build completed successfully!""
+      - echo "Build completed successfully!"
+      - docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
+      - docker tag portfolio:latest darshanaswath/portfolio:latest
+      - docker push darshanaswath/portfolio:latest
