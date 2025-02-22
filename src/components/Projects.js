@@ -4,11 +4,11 @@ import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useQuery } from "@tanstack/react-query";
-import { fetchResume } from "../actions";
+import { fetchDataWithCache } from "@/lib/fetch-data-server";
 
 export const Projects = () => {
   const { data, isLoading, isError } = useQuery({
-    queryFn: async () => await fetchResume("get-projects"),
+    queryFn: async () => await fetchDataWithCache("get-projects"),
     queryKey: ["projects"],
   });
 

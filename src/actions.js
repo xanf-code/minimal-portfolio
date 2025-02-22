@@ -21,6 +21,7 @@ export const fetchResume = async (collection) => {
 
   try {
     const response = await fetch(`${updated_url}/${collection}`);
+
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }

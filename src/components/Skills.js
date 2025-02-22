@@ -3,11 +3,11 @@
 import { Card, CardTitle, CardHeader, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useQuery } from "@tanstack/react-query";
-import { fetchResume } from "../actions";
+import { fetchDataWithCache } from "@/lib/fetch-data-server";
 
 export const Skills = () => {
   const { data, isLoading, isError } = useQuery({
-    queryFn: async () => await fetchResume("get-skills"),
+    queryFn: async () => await fetchDataWithCache("get-skills"),
     queryKey: ["skills"],
   });
 

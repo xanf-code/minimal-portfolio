@@ -3,11 +3,11 @@ import Image from "next/image";
 import { CalendarDays } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useQuery } from "@tanstack/react-query";
-import { fetchResume } from "../actions";
+import { fetchDataWithCache } from "@/lib/fetch-data-server";
 
 export const Experience = () => {
   const { data, isLoading, isError } = useQuery({
-    queryFn: async () => await fetchResume("get-jobs"),
+    queryFn: async () => await fetchDataWithCache("get-jobs"),
     queryKey: ["experiences"],
   });
 
