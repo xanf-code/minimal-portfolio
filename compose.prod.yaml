@@ -4,6 +4,7 @@ services:
     build:
       context: .
       dockerfile: prod.Dockerfile
+    image: darshanaswath/portfolio:latest
     restart: always
     ports:
       - 3000:3000
