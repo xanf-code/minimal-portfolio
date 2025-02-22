@@ -1,23 +1,43 @@
-name: build-and-push-to-docker
+name: Build and Push to Docker
+
 on:
   push:
     branches:
       - "main"
+
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
     steps:
-      - name: "checkout"
+      - name: Starting Checkout Process 📣
+        run: echo "Starting code checkout process..."
+
+      - name: Checkout Code 📥
         uses: actions/checkout@v2
 
-      - name: configure AWS credentials
+      - name: Checkout Complete ✅
+        run: echo "Code checkout complete!"
+
+      - name: Configuring AWS Credentials 🔐
+        run: echo "Starting AWS credentials configuration..."
+
+      - name: Configure AWS Credentials 🔐
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: ${{secrets.AWS_ACCESS_KEY_ID}}
-          aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - name: Run CodeBuild
+      - name: AWS Credentials Configured 🛡️
+        run: echo "AWS credentials configured successfully!"
+
+      - name: Running CodeBuild 🚧
+        run: echo "Triggering CodeBuild project..."
+
+      - name: Run CodeBuild 🚧
         uses: aws-actions/aws-codebuild-run-build@v1
         with:
           project-name: portfolio-codebuild-project
+
+      - name: CodeBuild Triggered 🎉
+        run: echo "CodeBuild triggered successfully!"
