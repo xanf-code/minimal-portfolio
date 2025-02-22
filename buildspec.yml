@@ -9,7 +9,7 @@ phases:
   build:
     commands:
       - echo "Building docker application…"
-      - docker compose -f compose.prod.yaml build
+      - docker-compose -f compose.prod.yaml build
   post_build:
     commands:
       - echo "Build completed successfully!""
